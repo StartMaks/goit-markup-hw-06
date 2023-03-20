@@ -50,9 +50,9 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%) rotate(0) scale(1, 1);
-	transition: transform 400ms var(--animation-function), box-shadow var(--animation-duration) var(--animation-function),
-		opacity 400ms var(--animation-function);
-	opacity: 1;
+	transition: transform 800ms var(--animation-function), box-shadow var(--animation-duration) var(--animation-function),
+    opacity: 250ms var(--animation-function);
+	
 
 	width: 408px;
 	height: 584px;
@@ -110,7 +110,8 @@ form {
 }
 
 .modal-item {
-	margin-bottom: 16px;
+	margin-bottom: 8px;
+	position: relative;
 }
 
 .modal-item.comment {
@@ -130,9 +131,15 @@ form {
 }
 
 .modal-item input {
+  transition:
+  border var(--animation-duration) var(--animation-function),
+  fill var(--animation-duration) var(--animation-function);
+
+
 	width: 100%;
 	min-height: 40px;
 	padding: 8px 16px;
+	padding-left: 38px;
 	margin: 0;
 
 	font-weight: 400;
@@ -144,11 +151,25 @@ form {
 	border-radius: 4px;
 }
 
-.modal-item .input:focus,
+.modal-item input:focus,
 textarea:focus {
 	outline: none;
 	border: 1px solid var(--accent-color);
 }
+
+
+.modal-item input:focus + .person-input>.input-icon {
+  fill: var(--accent-color);
+}
+
+.person-input {
+  width: 18px;
+  height: 24px;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
 
 .modal-policy {
 	font-weight: 400;
@@ -160,12 +181,22 @@ textarea:focus {
 	color: var(--modal-policy-color);
 }
 
+
+.checkbox:checked + .logo-check {
+	background-color: var(--accent-color);
+	border-color: var(--accent-color);
+}
+
+.checkbox:checked + .logo-check.check {
+	fill: var(--footer-logo-part);
+}
+
 textarea {
+    transition: border var(--animation-duration) var(--animation-function);
+
 	resize: none;
 	width: 100%;
 	min-height: 120px;
-	/* margin-top: 4px; */
-	/* margin-bottom: 16px; */
 	padding: 8px 16px;
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;
@@ -178,6 +209,34 @@ textarea {
 	letter-spacing: 0.04em;
 
 	color: rgba(117, 117, 117, 0.5);
+}
+
+.checkbox {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	appearance: none;
+
+	position: absolute;
+}
+
+.logo-check {
+	transition: background-color var(--animation-duration) var(--animation-function)
+	border-color var(--animation-duration) var(--animation-function)
+	fill var(--animation-duration) var(--animation-function); 
+	display: inline-block;
+	text-align: center;
+
+	width: 16px;
+	height: 16px;
+	border: 1.25px solid var(--secondary-background-color);
+	border-radius: 2px;
+	margin-right: 8px;
+
+
+}
+
+.check {
+	fill: transparent;
 }
 
 .btn-send {
@@ -205,6 +264,36 @@ textarea {
 .btn-send:focus {
 	background-color: var(--accent-color);
 }
+
+
+.checkbox {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	position: absolute;
+}
+
+
+.logo-check {
+	transition: background-color var(--animation-duration) var(--animation-function),
+    border-color var(--animation-duration) var(--animation-function),
+    fill var(--animation-duration) var(--animation-function);
+    display: inline-block;
+    text-align: center;
+
+	width: 16px;
+	height: 16px;
+	border: 1.25px solid var(--secondary-background-color);
+	border-radius: 2px;
+	margin-right: 8px;
+}
+
+
+.check {
+	fill: transparent;
+}
+
 
 /* body */
 
@@ -733,6 +822,14 @@ footer {
 	display: flex;
 	align-items: baseline;
 }
+
+
+
+
+
+
+
+
 
 /* Portfolio */
 
