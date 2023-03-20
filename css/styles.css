@@ -51,8 +51,8 @@
 	left: 50%;
 	transform: translate(-50%, -50%) rotate(0) scale(1, 1);
 	transition: transform 800ms var(--animation-function), box-shadow var(--animation-duration) var(--animation-function),
-    opacity: 250ms var(--animation-function);
-	
+		opacity 250ms var(--animation-function);
+	opacity: 1;
 
 	width: 408px;
 	height: 584px;
@@ -110,8 +110,8 @@ form {
 }
 
 .modal-item {
-	margin-bottom: 8px;
 	position: relative;
+	margin-bottom: 8px;
 }
 
 .modal-item.comment {
@@ -131,10 +131,8 @@ form {
 }
 
 .modal-item input {
-  transition:
-  border var(--animation-duration) var(--animation-function),
-  fill var(--animation-duration) var(--animation-function);
-
+	transition: border var(--animation-duration) var(--animation-function),
+		fill var(--animation-duration) var(--animation-function);
 
 	width: 100%;
 	min-height: 40px;
@@ -157,42 +155,39 @@ textarea:focus {
 	border: 1px solid var(--accent-color);
 }
 
-
-.modal-item input:focus + .person-input>.input-icon {
-  fill: var(--accent-color);
+.modal-item input:focus + .person-input > .input-icon {
+	fill: var(--accent-color);
 }
 
 .person-input {
-  width: 18px;
-  height: 24px;
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
+	width: 18px;
+	height: 24px;
+	position: absolute;
+	bottom: 8px;
+	left: 16px;
 }
-
 
 .modal-policy {
 	font-weight: 400;
 	font-size: 12px;
-	line-height: 1, 33;
+	line-height: 1.33;
 	letter-spacing: 0.04em;
 
 	margin-bottom: 24px;
 	color: var(--modal-policy-color);
 }
 
-
 .checkbox:checked + .logo-check {
 	background-color: var(--accent-color);
 	border-color: var(--accent-color);
 }
 
-.checkbox:checked + .logo-check.check {
+.checkbox:checked + .logo-check .check {
 	fill: var(--footer-logo-part);
 }
 
 textarea {
-    transition: border var(--animation-duration) var(--animation-function);
+	transition: border var(--animation-duration) var(--animation-function);
 
 	resize: none;
 	width: 100%;
@@ -213,26 +208,26 @@ textarea {
 
 .checkbox {
 	-webkit-appearance: none;
-    -moz-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 
 	position: absolute;
 }
 
 .logo-check {
-	transition: background-color var(--animation-duration) var(--animation-function)
-	border-color var(--animation-duration) var(--animation-function)
-	fill var(--animation-duration) var(--animation-function); 
+	transition: background-color var(--animation-duration) var(--animation-function),
+		border-color var(--animation-duration) var(--animation-function),
+		fill var(--animation-duration) var(--animation-function);
 	display: inline-block;
 	text-align: center;
+	/* align-items: center;
+  justify-content: center; */
 
 	width: 16px;
 	height: 16px;
 	border: 1.25px solid var(--secondary-background-color);
 	border-radius: 2px;
 	margin-right: 8px;
-
-
 }
 
 .check {
@@ -254,7 +249,7 @@ textarea {
 	text-align: center;
 	cursor: pointer;
 	background-color: var(--logo-part-color);
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0, 15);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	border-radius: 4px;
 	border: none;
 	color: #ffffff;
@@ -264,36 +259,6 @@ textarea {
 .btn-send:focus {
 	background-color: var(--accent-color);
 }
-
-
-.checkbox {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-
-	position: absolute;
-}
-
-
-.logo-check {
-	transition: background-color var(--animation-duration) var(--animation-function),
-    border-color var(--animation-duration) var(--animation-function),
-    fill var(--animation-duration) var(--animation-function);
-    display: inline-block;
-    text-align: center;
-
-	width: 16px;
-	height: 16px;
-	border: 1.25px solid var(--secondary-background-color);
-	border-radius: 2px;
-	margin-right: 8px;
-}
-
-
-.check {
-	fill: transparent;
-}
-
 
 /* body */
 
@@ -580,9 +545,6 @@ ul {
 .advantages .chapter:not(:last-child) {
 	margin-right: 24px;
 }
-/* .advantages .chapter + .chapter {
-  margin-left: 24px;
-} */
 
 .advantages .chapter {
 	width: calc((100%-24px * 3) / 4);
@@ -624,14 +586,10 @@ ul {
 .work-nav .chapter:not(:last-child) {
 	margin-right: 24px;
 }
-/* .work-nav .chapter + .chapter {
-  margin-left: 24px;
-} */
 
 /* Team */
 
 .section.tint {
-	/* max-width: 1440px; */
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 120px;
@@ -756,7 +714,6 @@ footer {
 }
 
 .section.foot {
-	/* max-width: 1440px; */
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 100px;
@@ -823,13 +780,62 @@ footer {
 	align-items: baseline;
 }
 
+.foot-social-links {
+	margin-right: 80px;
+}
 
+.subscribe-field {
+	display: flex;
+}
 
+.subscribe-label {
+	margin-right: 24px;
+}
 
+.subscribe-label input {
+	transition: border var(--animation-duration) var(--animation-function);
 
+	min-width: 264px;
+	min-height: 40px;
+	padding: 8px 16px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+	border-radius: 4px;
+	background-color: transparent;
+	color: var(--footer-logo-part);
+}
 
+.subscribe-label input:focus {
+	outline: none;
+	border: 1px solid var(--accent-color);
+}
 
+.subscribe-input::placeholder {
+	font-size: 12px;
+	line-height: 2;
+	letter-spacing: 0.04em;
 
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-subscribe {
+	display: flex;
+	padding: 8px 24px;
+	min-width: 165px;
+	height: 40px;
+	color: var(--hero-text-color);
+	background-color: var(--logo-part-color);
+	border: transparent;
+	border-radius: 4px;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.btn-subscribe:hover,
+.btn-subscribe:focus {
+	background-color: var(--accent-color);
+}
 
 /* Portfolio */
 
@@ -852,7 +858,7 @@ footer {
 	border-radius: 4px;
 	padding: 12px 24px;
 	min-width: 69px;
-	border: 1px solid #e7e9fc;
+	border: transparent;
 
 	background-color: var(--footer-logo-part);
 	color: var(--logo-part-color);
@@ -881,6 +887,9 @@ footer {
 .btn-list .chapter:not(:last-child) {
 	margin-right: 24px;
 }
+/* .btn-list .chapter + .chapter {
+  margin-left: 24px;
+} */
 
 /* Portfolio's cards */
 
