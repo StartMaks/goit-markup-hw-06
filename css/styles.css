@@ -172,6 +172,8 @@ textarea:focus {
 	font-size: 12px;
 	line-height: 1.33;
 	letter-spacing: 0.04em;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 	margin-bottom: 24px;
 	color: var(--modal-policy-color);
