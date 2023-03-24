@@ -62,22 +62,31 @@
 	border-radius: 4px;
 }
 
+.modal.police-box {
+	font-size: 12px;
+	line-height: 1.33;
+	letter-spacing: 0.04em;
+	color: #4d5ae5;
+}
+
 .modal-close {
 	position: absolute;
-	transition: background-color var(--animation-duration) var(--animation-function);
-
-	display: flex;
-	top: 24px;
+	top: 30px;
 	right: 24px;
+	padding: 0;
+	display: flex;
 	align-items: center;
 	justify-content: center;
-
-	cursor: pointer;
 	width: 24px;
 	height: 24px;
-	border-radius: 50%;
+
+	background: #e7e9fc;
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	background-color: var(--header-background-color);
+	border-radius: 50%;
+	transition: background-color var(--background-focus);
+	transition-duration: 250ms;
+	transition-timing-function: var(--cubic);
+	cursor: pointer;
 }
 
 .btn-modal {
@@ -176,7 +185,7 @@ textarea:focus {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 	margin-bottom: 24px;
-	color: var(--modal-policy-color);
+	color: #4d5ae5;
 }
 
 .checkbox:checked + .logo-check {
